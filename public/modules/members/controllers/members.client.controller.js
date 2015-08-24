@@ -9,7 +9,23 @@ angular.module('members').controller('MembersController', ['$scope', '$statePara
 		$scope.create = function() {
 			// Create new Member object
 			var member = new Members ({
-				name: this.name
+				namePrefix: this.namePrefix,
+				firstName: this.firstName,
+				middleName: this.middleName,
+				lastName: this.lastName,
+				nameSuffix: this.nameSuffix,
+				email: this.email,
+				phoneHome: this.phoneHome,
+				phoneMobile: this.phoneMobile,
+				street1: this.street1,
+				street2: this.street2,
+				POBox: this.POBox,
+				city: this.city,
+				region: this.region,
+				postalCode: this.postalCode,
+				country: this.country,
+				notes: this.notes,
+				memberType: this.memberType
 			});
 
 			// Redirect after save
@@ -17,7 +33,23 @@ angular.module('members').controller('MembersController', ['$scope', '$statePara
 				$location.path('members/' + response._id);
 
 				// Clear form fields
-				$scope.name = '';
+				$scope.namePrefix = '';
+				$scope.firstName = '';
+				$scope.middleName = '';
+				$scope.lastName = '';
+				$scope.nameSuffix = '';
+				$scope.email = '';
+				$scope.phoneHome = '';
+				$scope.phoneMobile = '';
+				$scope.street1 = '';
+				$scope.street2 = '';
+				$scope.POBox = '';
+				$scope.city = '';
+				$scope.region = '';
+				$scope.postalCode = '';
+				$scope.country = '';
+				$scope.notes = '';
+				$scope.memberType = '';
 			}, function(errorResponse) {
 				$scope.error = errorResponse.data.message;
 			});
