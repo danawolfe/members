@@ -5,6 +5,7 @@
     <div class="list-group">
         <a data-ng-repeat="member in members" data-ng-href="#!/members/{{member._id}}" class="list-group-item">
 			<small class="list-group-item-text">
+                {{member.firstName}}
 				Posted on
 				<span data-ng-bind="member.created | date:'medium'"></span>
 				by
