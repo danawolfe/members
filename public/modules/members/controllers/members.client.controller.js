@@ -16,16 +16,18 @@ membersApp.controller('MembersController', ['$scope', '$stateParams', 'Authentic
         // Open a modal window to update a single member record
         $scope.animationsEnabled = true;
 
-        $scope.open = function(size) {
+        this.modalUpdate = function(size, selectedMember) {
 
             var modalInstance = $modal.open({
                 animation: $scope.animationsEnabled,
-                templateUrl: 'myModalContent.html',
-                controller: 'ModalInstanceCtrl',
+                templateUrl: 'modules/members/views/edit-member.client.view.html',
+                controller: function ($scope, $modalInstance, member) {
+                	$scope.member = member;
+                },
                 size: size,
                 resolve: {
-                    items: function() {
-                        return $scope.items;
+                    member: function() {
+                        return selectedMember;
                     }
                 }
             });
