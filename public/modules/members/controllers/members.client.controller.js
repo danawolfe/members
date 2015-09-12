@@ -48,11 +48,6 @@ membersApp.controller('MembersController', ['$scope', '$stateParams', 'Authentic
                 $log.info('Modal dismissed at: ' + new Date());
             });
         };
-
-
-
-        //$scope.memberTypes=['Parent','Family','Friend','Honorary','Cadet','Graduate'];
-
     }
 ]);
 
@@ -64,16 +59,16 @@ membersApp.controller('MembersCreateController', ['$scope', 'Members',
 
 membersApp.controller('MembersUpdateController', ['$scope', 'Members',
     function($scope, Members) {
-	// Update existing Member
-	this.update = function(updatedMember) {
-		var member = updatedMember;
+        // Update existing Member
+        this.update = function(updatedMember) {
+            var member = updatedMember;
 
-		member.$update(function() {
+            member.$update(function() {
 
-		}, function(errorResponse) {
-			$scope.error = errorResponse.data.message;
-		});
-	};
+            }, function(errorResponse) {
+                $scope.error = errorResponse.data.message;
+            });
+        };
     }
 ]);
 

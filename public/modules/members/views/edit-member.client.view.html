@@ -1,6 +1,6 @@
 <section data-ng-controller="MembersUpdateController as memberUpCtrl">
     <div class="modal-header">
-        <h3 class="modal-title">Edit Member</h3>
+        <h3 class="modal-title">Update: {{member.firstName}} {{member.lastName}}</h3>
     </div>
     <div class="modal-body">
 
@@ -15,7 +15,7 @@
                     </div>
                 </div>
                 <div class="col-sm-6 text-center">
-                    <i class="glyphicon glyphicon-user cust-profile" ng-class="{'text-primary': true }"></i>
+                    <i class="updateGlyph" ng-class="{'Cadet':'glyphicon glyphicon-star glyph-cadet', 'Parent':'glyphicon glyphicon-user glyph-parent', 'Graduate':'glyphicon glyphicon-pause glyph-graduate', 'Honorary':'glyphicon glyphicon-flag glyph-honorary'} [member.memberType]" ></i>
                 </div>
                 <div class="col-sm-6">
                     <div class="form-group">
@@ -119,8 +119,5 @@
     <div class="modal-footer">
         <button class="btn btn-success btn-lg" type="button" ng-click="memberUpCtrl.update(member); ok()">Update & Close</button>
         <button class="btn btn-warning btn-lg" type="button" ng-click="cancel()">Cancel</button>
-    </div>
-    <div class="form-group">
-        <input type="submit" value="Update" class="btn btn-default">
     </div>
 </section>

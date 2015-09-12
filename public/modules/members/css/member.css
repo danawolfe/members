@@ -1,4 +1,4 @@
-.cust-profile {
+.updateGlyph {
     font-size: 250px;
 }
 
@@ -9,4 +9,24 @@
 
 .member-list {
 	font-size: 100px;
+}
+
+.glyph-cadet {
+	color:	rgb(214,184,139);
+	
+}
+
+.glyph-parent {
+	color:	#696969;
+	
+}
+
+.glyph-graduate {
+	color:	#0033CC;
+	
+}
+
+.glyph-honorary {
+	color:	#8B0000;
+	
 }
