@@ -52,7 +52,7 @@ membersApp.controller('MembersCreateController', ['$scope', 'Members',
     }
 ]);
 
-membersApp.controller('MembersEditController', ['$scope', 'Members',
+membersApp.controller('MembersUpdateController', ['$scope', 'Members',
     function($scope, Members) {
 
     }
