@@ -4,7 +4,7 @@
     </div>
     <div class="modal-body">
 
-        <form >
+        <form name="updateMemberForm">
         <fieldset>
             <div class="row">
                 <div class="form-group">
@@ -21,13 +21,13 @@
                     <div class="form-group">
                         <label class="control-label" for="firstName">First Name</label>
                         <div class="controls">
-                            <input type="text" data-ng-model="member.firstName" id="firstName" class="form-control">
+                            <input type="text" data-ng-model="member.firstName" id="firstName" class="form-control" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label" for="lastName">Last Name</label>
                         <div class="controls">
-                            <input type="text" data-ng-model="member.lastName" id="lastName" class="form-control">
+                            <input type="text" data-ng-model="member.lastName" id="lastName" class="form-control" required>
                         </div>
                     </div>
                     <div class="form-group">
@@ -117,7 +117,7 @@
         </form>
     </div>
     <div class="modal-footer">
-        <button class="btn btn-success btn-lg" type="button" ng-click="memberUpCtrl.update(member); ok()">Update & Close</button>
+        <button class="btn btn-success btn-lg" type="button" ng-click="memberUpCtrl.update(member); ok()" ng-disabled="updateMemberForm.$invalid">Update & Close</button>
         <button class="btn btn-warning btn-lg" type="button" ng-click="cancel()">Cancel</button>
     </div>
 </section>
