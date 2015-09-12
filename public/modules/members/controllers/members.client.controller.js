@@ -12,7 +12,7 @@ membersApp.controller('MembersController', ['$scope', '$stateParams', 'Authentic
         //Find a list of member 
         this.members = Members.query();
 
-        
+
         // Open a modal window to update a single member record
         $scope.animationsEnabled = true;
 
@@ -21,8 +21,18 @@ membersApp.controller('MembersController', ['$scope', '$stateParams', 'Authentic
             var modalInstance = $modal.open({
                 animation: $scope.animationsEnabled,
                 templateUrl: 'modules/members/views/edit-member.client.view.html',
-                controller: function ($scope, $modalInstance, member) {
-                	$scope.member = member;
+                controller: function($scope, $modalInstance, member) {
+                    $scope.member = member;
+
+                    $scope.ok = function() {
+                        $modalInstance.close($scope.member);
+                    };
+
+                    $scope.cancel = function() {
+                        $modalInstance.dismiss('cancel');
+                    };
+
+
                 },
                 size: size,
                 resolve: {
@@ -54,7 +64,16 @@ membersApp.controller('MembersCreateController', ['$scope', 'Members',
 
 membersApp.controller('MembersUpdateController', ['$scope', 'Members',
     function($scope, Members) {
+	// Update existing Member
+	this.update = function(updatedMember) {
+		var member = updatedMember;
 
+		member.$update(function() {
+
+		}, function(errorResponse) {
+			$scope.error = errorResponse.data.message;
+		});
+	};
     }
 ]);
 

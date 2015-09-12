@@ -1,94 +1,96 @@
-<section data-ng-controller="MembersUpdateController as memberUpdateCtrl">
+<section data-ng-controller="MembersUpdateController as memberUpCtrl">
     <div class="modal-header">
         <h3 class="modal-title">Edit Member</h3>
     </div>
     <div class="modal-body">
-                 <fieldset>
-                    <div class="row">
-                        <div class="form-group">
-                            <div data-ng-show="error" class="text-center text-danger">
-                                <div class="alert alert-danger" role="alert">
-                                    <strong data-ng-bind="error"></strong>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 text-center">
-                            <i class="glyphicon glyphicon-user cust-profile" ng-class="{'text-primary': true }"></i>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="form-group">
-                                <label class="control-label" for="firstName">First Name</label>
-                                <div class="controls">
-                                    <input type="text" data-ng-model="member.firstName" id="firstName" class="form-control">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label" for="lastName">Last Name</label>
-                                <div class="controls">
-                                    <input type="text" data-ng-model="member.lastName" id="lastName" class="form-control">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label" for="email">Email</label>
-                                <div class="controls">
-                                    <input type="text" data-ng-model="member.email" id="email" class="form-control">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label" for="phoneHome">Mobile</label>
-                                <div class="controls">
-                                    <input type="text" data-ng-model="member.phoneHome" id="phoneHome" class="form-control">
-                                </div>
-                            </div>
+
+        <form >
+        <fieldset>
+            <div class="row">
+                <div class="form-group">
+                    <div data-ng-show="error" class="text-center text-danger">
+                        <div class="alert alert-danger" role="alert">
+                            <strong data-ng-bind="error"></strong>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-sm-6 col-sm-push-6">
-                            <div class="form-group">
-                                <label class="control-label" for="street1">Street 1</label>
-                                <div class="controls">
-                                    <input type="text" data-ng-model="member.street1" id="street1" class="form-control">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label" for="street2">Street 2</label>
-                                <div class="controls">
-                                    <input type="text" data-ng-model="member.street2" id="street2" class="form-control">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label" for="city">City</label>
-                                <div class="controls">
-                                    <input type="text" data-ng-model="member.city" id="city" class="form-control">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label" for="region">State</label>
-                                <div class="controls">
-                                    <input type="text" data-ng-model="member.region" id="region" class="form-control">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label" for="postalCode">Postal Code</label>
-                                <div class="controls">
-                                    <input type="text" data-ng-model="member.postalCode" id="postalCode" class="form-control">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label" for="country">Country</label>
-                                <div class="controls">
-                                    <input type="text" data-ng-model="member.country" id="country" class="form-control">
-                                </div>
-                            </div>
+                </div>
+                <div class="col-sm-6 text-center">
+                    <i class="glyphicon glyphicon-user cust-profile" ng-class="{'text-primary': true }"></i>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label" for="firstName">First Name</label>
+                        <div class="controls">
+                            <input type="text" data-ng-model="member.firstName" id="firstName" class="form-control">
                         </div>
-                        <div class="col-sm-6 col-sm-pull-6">
-                            <div class="form-group">
-                                <label class="control-label" for="memberType">Member Type</label>
-                                <div class="controls">
-                                    <input type="" data-ng-model="member.memberType" id="memberType" class="form-control">
-                                </div>
-                            </div>
-                            <!--                         <div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="lastName">Last Name</label>
+                        <div class="controls">
+                            <input type="text" data-ng-model="member.lastName" id="lastName" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="email">Email</label>
+                        <div class="controls">
+                            <input type="text" data-ng-model="member.email" id="email" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="phoneHome">Mobile</label>
+                        <div class="controls">
+                            <input type="text" data-ng-model="member.phoneHome" id="phoneHome" class="form-control">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-sm-push-6">
+                    <div class="form-group">
+                        <label class="control-label" for="street1">Street 1</label>
+                        <div class="controls">
+                            <input type="text" data-ng-model="member.street1" id="street1" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="street2">Street 2</label>
+                        <div class="controls">
+                            <input type="text" data-ng-model="member.street2" id="street2" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="city">City</label>
+                        <div class="controls">
+                            <input type="text" data-ng-model="member.city" id="city" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="region">State</label>
+                        <div class="controls">
+                            <input type="text" data-ng-model="member.region" id="region" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="postalCode">Postal Code</label>
+                        <div class="controls">
+                            <input type="text" data-ng-model="member.postalCode" id="postalCode" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="country">Country</label>
+                        <div class="controls">
+                            <input type="text" data-ng-model="member.country" id="country" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-sm-pull-6">
+                    <div class="form-group">
+                        <label class="control-label" for="memberType">Member Type</label>
+                        <div class="controls">
+                            <input type="" data-ng-model="member.memberType" id="memberType" class="form-control">
+                        </div>
+                    </div>
+                    <!--                         <div>
                             <div class="dropdown">
                                 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                     Member Type
@@ -99,23 +101,24 @@
                                 </ul>
                             </div>
                         </div> -->
-                            <div class="form-group">
-                                <label class="control-label" for="notes">Notes</label>
-                                <div class="controls">
-                                    <input type="text" data-ng-model="member.notes" id="notes" class="form-control">
-                                </div>
-                            </div>
+                    <div class="form-group">
+                        <label class="control-label" for="notes">Notes</label>
+                        <div class="controls">
+                            <input type="text" data-ng-model="member.notes" id="notes" class="form-control">
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-sm-6">
-                        </div>
-                    </div>
-                </fieldset>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                </div>
+            </div>
+        </fieldset>
+        </form>
     </div>
     <div class="modal-footer">
-        <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
-        <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+        <button class="btn btn-success btn-lg" type="button" ng-click="memberUpCtrl.update(member); ok()">Update & Close</button>
+        <button class="btn btn-warning btn-lg" type="button" ng-click="cancel()">Cancel</button>
     </div>
     <div class="form-group">
         <input type="submit" value="Update" class="btn btn-default">
