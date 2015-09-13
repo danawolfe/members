@@ -25,7 +25,11 @@ membersApp.controller('MembersController', ['$scope', '$stateParams', 'Authentic
                     $scope.member = member;
 
                     $scope.ok = function() {
+
+                        //                        if ( updateMemberForm.$valid){
                         $modalInstance.close($scope.member);
+                        //                        }
+
                     };
 
                     $scope.cancel = function() {
@@ -63,6 +67,9 @@ membersApp.controller('MembersUpdateController', ['$scope', 'Members',
         this.update = function(updatedMember) {
             var member = updatedMember;
 
+
+
+
             member.$update(function() {
 
             }, function(errorResponse) {
@@ -72,89 +79,101 @@ membersApp.controller('MembersUpdateController', ['$scope', 'Members',
     }
 ]);
 
-// 	// Create new Member
-// 	$scope.create = function() {
-// 		// Create new Member object
-// 		var member = new Members ({
-// 			namePrefix: this.namePrefix,
-// 			firstName: this.firstName,
-// 			middleName: this.middleName,
-// 			lastName: this.lastName,
-// 			nameSuffix: this.nameSuffix,
-// 			email: this.email,
-// 			phoneHome: this.phoneHome,
-// 			phoneMobile: this.phoneMobile,
-// 			street1: this.street1,
-// 			street2: this.street2,
-// 			POBox: this.POBox,
-// 			city: this.city,
-// 			region: this.region,
-// 			postalCode: this.postalCode,
-// 			country: this.country,
-// 			notes: this.notes,
-// 			memberType: this.memberType
-// 		});
+membersApp.directive('memberList', [function() {
+    return {
+        restrict: 'E',
+        transclude: true,
+        templateUrl: 'modules/members/views/member-list-template.html',
+        link: function(scope, elements, attrs) {
 
-// 		// Redirect after save
-// 		member.$save(function(response) {
-// 			$location.path('members/' + response._id);
-
-// 			// Clear form fields
-// 			$scope.namePrefix = '';
-// 			$scope.firstName = '';
-// 			$scope.middleName = '';
-// 			$scope.lastName = '';
-// 			$scope.nameSuffix = '';
-// 			$scope.email = '';
-// 			$scope.phoneHome = '';
-// 			$scope.phoneMobile = '';
-// 			$scope.street1 = '';
-// 			$scope.street2 = '';
-// 			$scope.POBox = '';
-// 			$scope.city = '';
-// 			$scope.region = '';
-// 			$scope.postalCode = '';
-// 			$scope.country = '';
-// 			$scope.notes = '';
-// 			$scope.memberType = '';
-// 		}, function(errorResponse) {
-// 			$scope.error = errorResponse.data.message;
-// 		});
-// 	};
-
-// 	// Remove existing Member
-// 	$scope.remove = function(member) {
-// 		if ( member ) { 
-// 			member.$remove();
-
-// 			for (var i in $scope.members) {
-// 				if ($scope.members [i] === member) {
-// 					$scope.members.splice(i, 1);
-// 				}
-// 			}
-// 		} else {
-// 			$scope.member.$remove(function() {
-// 				$location.path('members');
-// 			});
-// 		}
-// 	};
-
-// 	// Update existing Member
-// 	$scope.update = function() {
-// 		var member = $scope.member;
-
-// 		member.$update(function() {
-// 			$location.path('members/' + member._id);
-// 		}, function(errorResponse) {
-// 			$scope.error = errorResponse.data.message;
-// 		});
-// 	};
+        }
+    };
+}]);
 
 
-// 	// Find existing Member
-// 	$scope.findOne = function() {
-// 		$scope.member = Members.get({ 
-// 			memberId: $stateParams.memberId
-// 		});
-// 	};
+//  // Create new Member
+//  $scope.create = function() {
+//      // Create new Member object
+//      var member = new Members ({
+//          namePrefix: this.namePrefix,
+//          firstName: this.firstName,
+//          middleName: this.middleName,
+//          lastName: this.lastName,
+//          nameSuffix: this.nameSuffix,
+//          email: this.email,
+//          phoneHome: this.phoneHome,
+//          phoneMobile: this.phoneMobile,
+//          street1: this.street1,
+//          street2: this.street2,
+//          POBox: this.POBox,
+//          city: this.city,
+//          region: this.region,
+//          postalCode: this.postalCode,
+//          country: this.country,
+//          notes: this.notes,
+//          memberType: this.memberType
+//      });
+
+//      // Redirect after save
+//      member.$save(function(response) {
+//          $location.path('members/' + response._id);
+
+//          // Clear form fields
+//          $scope.namePrefix = '';
+//          $scope.firstName = '';
+//          $scope.middleName = '';
+//          $scope.lastName = '';
+//          $scope.nameSuffix = '';
+//          $scope.email = '';
+//          $scope.phoneHome = '';
+//          $scope.phoneMobile = '';
+//          $scope.street1 = '';
+//          $scope.street2 = '';
+//          $scope.POBox = '';
+//          $scope.city = '';
+//          $scope.region = '';
+//          $scope.postalCode = '';
+//          $scope.country = '';
+//          $scope.notes = '';
+//          $scope.memberType = '';
+//      }, function(errorResponse) {
+//          $scope.error = errorResponse.data.message;
+//      });
+//  };
+
+//  // Remove existing Member
+//  $scope.remove = function(member) {
+//      if ( member ) { 
+//          member.$remove();
+
+//          for (var i in $scope.members) {
+//              if ($scope.members [i] === member) {
+//                  $scope.members.splice(i, 1);
+//              }
+//          }
+//      } else {
+//          $scope.member.$remove(function() {
+//              $location.path('members');
+//          });
+//      }
+//  };
+
+//  // Update existing Member
+//  $scope.update = function() {
+//      var member = $scope.member;
+
+//      member.$update(function() {
+//          $location.path('members/' + member._id);
+//      }, function(errorResponse) {
+//          $scope.error = errorResponse.data.message;
+//      });
+//  };
+
+
+//  // Find existing Member
+//  $scope.findOne = function() {
+//      $scope.member = Members.get({ 
+//          memberId: $stateParams.memberId
+//      });
+//  };
 // }
