@@ -1,9 +1,9 @@
-<section data-ng-controller="MembersController">
-    <div class="page-header">
-        <h1>New Member</h1>
+<section data-ng-controller="MembersCreateController as memberCtrl">
+    <div class="modal-header">
+        <h3 class="modal-title">New Member</h3>
     </div>
-    <div class="col-md-12">
-        <form class="" data-ng-submit="create()" novalidate>
+    <div class="modal-body">
+        <form name="createMemberForm">
             <fieldset>
                 <div class="row">
                     <div class="form-group">
@@ -13,32 +13,32 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-6 text-center"> 
-                        <i class="glyphicon glyphicon-user cust-profile" ng-class="{'text-primary': true }"></i>
+                    <div class="col-sm-6 text-center">
+                        <i class="glyphicon glyphicon-user updateGlyph" ng-class="{'text-primary': true }"></i>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label class="control-label" for="firstName">First Name</label>
                             <div class="controls">
-                                <input type="text" data-ng-model="firstName" id="firstName" class="form-control" >
+                                <input type="text" data-ng-model="memberCtrl.firstName" id="firstName" class="form-control" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label" for="lastName">Last Name</label>
                             <div class="controls">
-                                <input type="text" data-ng-model="lastName" id="lastName" class="form-control" >
+                                <input type="text" data-ng-model="memberCtrl.lastName" id="lastName" class="form-control" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label" for="email">Email</label>
                             <div class="controls">
-                                <input type="text" data-ng-model="email" id="email" class="form-control" >
+                                <input type="text" data-ng-model="memberCtrl.email" id="email" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label" for="phoneHome">Mobile</label>
                             <div class="controls">
-                                <input type="text" data-ng-model="phoneHome" id="phoneHome" class="form-control" >
+                                <input type="text" data-ng-model="memberCtrl.phoneHome" id="phoneHome" class="form-control">
                             </div>
                         </div>
                     </div>
@@ -48,48 +48,48 @@
                         <div class="form-group">
                             <label class="control-label" for="street1">Street 1</label>
                             <div class="controls">
-                                <input type="text" data-ng-model="street1" id="street1" class="form-control" >
+                                <input type="text" data-ng-model="memberCtrl.street1" id="street1" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label" for="street2">Street 2</label>
                             <div class="controls">
-                                <input type="text" data-ng-model="street2" id="street2" class="form-control" >
+                                <input type="text" data-ng-model="memberCtrl.street2" id="street2" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label" for="city">City</label>
                             <div class="controls">
-                                <input type="text" data-ng-model="city" id="city" class="form-control" >
+                                <input type="text" data-ng-model="memberCtrl.city" id="city" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label" for="region">State</label>
                             <div class="controls">
-                                <input type="text" data-ng-model="region" id="region" class="form-control" >
+                                <input type="text" data-ng-model="memberCtrl.region" id="region" class="form-control">
                             </div>
-                        </div>                    
+                        </div>
                         <div class="form-group">
                             <label class="control-label" for="postalCode">Postal Code</label>
                             <div class="controls">
-                                <input type="text" data-ng-model="postalCode" id="postalCode" class="form-control" >
+                                <input type="text" data-ng-model="memberCtrl.postalCode" id="postalCode" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label" for="country">Country</label>
                             <div class="controls">
-                                <input type="text" data-ng-model="country" id="country" class="form-control" >
+                                <input type="text" data-ng-model="memberCtrl.country" id="country" class="form-control">
                             </div>
-                        </div>                     
+                        </div>
                     </div>
-                    <div class="col-sm-6 col-sm-pull-6" >
+                    <div class="col-sm-6 col-sm-pull-6">
                         <div class="form-group">
                             <label class="control-label" for="memberType">Member Type</label>
                             <div class="controls">
-                                <input type="" data-ng-model="memberType" id="memberType" class="form-control" >
+                                <input type="" data-ng-model="memberCtrl.memberType" id="memberType" class="form-control">
                             </div>
                         </div>
-<!--                         <div>
+                        <!--                         <div>
                             <div class="dropdown">
                                 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                     Member Type
@@ -103,24 +103,16 @@
                         <div class="form-group">
                             <label class="control-label" for="notes">Notes</label>
                             <div class="controls">
-                                <input type="text" data-ng-model="notes" id="notes" class="form-control" >
+                                <input type="text" data-ng-model="memberCtrl.notes" id="notes" class="form-control">
                             </div>
-                        </div>                         
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-6">
-                        
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-lg btn-success">
-                                Save & Close
-                            </button>
-                        </div>    
+                        </div>
                     </div>
                 </div>
             </fieldset>
         </form>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-success btn-lg" type="button" ng-click="memberCtrl.create(); ok()" ng-disabled="createMemberForm.$invalid">Save & Close</button>
+        <button class="btn btn-warning btn-lg" type="button" ng-click="cancel()">Cancel</button>
     </div>
 </section>

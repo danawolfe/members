@@ -92,7 +92,7 @@ var MemberSchema = new Schema({
 	},
 	memberType: {
 		type: String, enum: ['Parent','Family','Friend','Honorary','Cadet','Graduate'],
-		default: '',
+		default: 'Parent',
 		trim: true
 	},
 	created: {

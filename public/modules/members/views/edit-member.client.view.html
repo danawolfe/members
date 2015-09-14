@@ -86,7 +86,9 @@
                         <div class="form-group">
                             <label class="control-label" for="memberType">Member Type</label>
                             <div class="controls">
-                                <input type="" data-ng-model="member.memberType" id="memberType" class="form-control">
+                                <select data-ng-model="member.memberType" id="memberType" class="form-control" ng-options="t.type for t in membershipCategory">
+                                    <option value="">-- choose membership type --</option>
+                                </select>
                             </div>
                         </div>
                         <!--                         <div>
@@ -116,7 +118,7 @@
         </form>
     </div>
     <div class="modal-footer">
-        <button class="btn btn-success btn-lg" type="button" ng-click="memberUpCtrl.update(member); ok()"  ng-disabled="updateMemberForm.$invalid">Update & Close</button>
+        <button class="btn btn-success btn-lg" type="button" ng-click="memberUpCtrl.update(member); ok()" ng-disabled="updateMemberForm.$invalid">Update & Close</button>
         <button class="btn btn-warning btn-lg" type="button" ng-click="cancel()">Cancel</button>
     </div>
 </section>
