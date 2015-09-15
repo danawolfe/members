@@ -187,25 +187,7 @@ membersApp.controller('MembersCreateController', ['$scope', 'Members', 'Notify',
 membersApp.controller('MembersUpdateController', ['$scope', 'Members',
     function($scope, Members) {
 
-        $scope.membershipCategory = [{
-            id: 'Parent',
-            type: 'Parent'
-        }, {
-            id: 'Family',
-            type: 'Family'
-        }, {
-            id: 'Friend',
-            type: 'Friend'
-        }, {
-            id: 'Honorary',
-            type: 'Honorary'
-        }, {
-            id: 'Cadet',
-            type: 'Cadet'
-        }, {
-            id: 'Graduate',
-            type: 'Graduate'
-        }];
+        $scope.membershipCategory = ['Parent','Family','Friend','Honorary','Cadet','Graduate'];
 
 
         // Update existing Member

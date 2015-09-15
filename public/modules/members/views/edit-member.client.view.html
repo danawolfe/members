@@ -86,7 +86,8 @@
                         <div class="form-group">
                             <label class="control-label" for="memberType">Member Type</label>
                             <div class="controls">
-                                <select data-ng-model="member.memberType" id="memberType" class="form-control" ng-options="t.type for t in membershipCategory">
+<!--                                 <select data-ng-model="member.memberType" id="memberType" class="form-control" ng-options="t.type for t in membershipCategory">
+ -->                                <select data-ng-model="member.memberType" class="form-control" ng-options="t for t in membershipCategory">
                                     <option value="">-- choose membership type --</option>
                                 </select>
                             </div>
