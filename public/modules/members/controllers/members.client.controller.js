@@ -109,25 +109,7 @@ membersApp.controller('MembersCreateController', ['$scope', 'Members', 'Notify',
     function($scope, Members, Notify) {
         // Create new Member
 
-        $scope.membershipCategory = [{
-            id: 'Parent',
-            type: 'Parent'
-        }, {
-            id: 'Family',
-            type: 'Family'
-        }, {
-            id: 'Friend',
-            type: 'Friend'
-        }, {
-            id: 'Honorary',
-            type: 'Honorary'
-        }, {
-            id: 'Cadet',
-            type: 'Cadet'
-        }, {
-            id: 'Graduate',
-            type: 'Graduate'
-        }];
+        $scope.membershipCategory = ['Parent', 'Family', 'Friend', 'Honorary', 'Cadet', 'Graduate'];
 
         this.create = function() {
             // Create new Member object
@@ -158,24 +140,7 @@ membersApp.controller('MembersCreateController', ['$scope', 'Members', 'Notify',
                     'id': response._id
                 });
 
-                // // Clear form fields
-                // $scope.namePrefix = '';
-                // $scope.firstName = '';
-                // $scope.middleName = '';
-                // $scope.lastName = '';
-                // $scope.nameSuffix = '';
-                // $scope.email = '';
-                // $scope.phoneHome = '';
-                // $scope.phoneMobile = '';
-                // $scope.street1 = '';
-                // $scope.street2 = '';
-                // $scope.POBox = '';
-                // $scope.city = '';
-                // $scope.region = '';
-                // $scope.postalCode = '';
-                // $scope.country = '';
-                // $scope.notes = '';
-                // $scope.memberType = '';
+
             }, function(errorResponse) {
                 $scope.error = errorResponse.data.message;
             });
@@ -187,8 +152,7 @@ membersApp.controller('MembersCreateController', ['$scope', 'Members', 'Notify',
 membersApp.controller('MembersUpdateController', ['$scope', 'Members',
     function($scope, Members) {
 
-        $scope.membershipCategory = ['Parent','Family','Friend','Honorary','Cadet','Graduate'];
-
+        $scope.membershipCategory = ['Parent', 'Family', 'Friend', 'Honorary', 'Cadet', 'Graduate'];
 
         // Update existing Member
         this.update = function(updatedMember) {
@@ -217,22 +181,3 @@ membersApp.directive('memberList', ['Members', 'Notify', function(Members, Notif
         }
     };
 }]);
-
-
-
-//  // Remove existing Member
-//  $scope.remove = function(member) {
-//      if ( member ) { 
-//          member.$remove();
-
-//          for (var i in $scope.members) {
-//              if ($scope.members [i] === member) {
-//                  $scope.members.splice(i, 1);
-//              }
-//          }
-//      } else {
-//          $scope.member.$remove(function() {
-//              $location.path('members');
-//          });
-//      }
-//  };
